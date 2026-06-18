@@ -1,0 +1,60 @@
+### Get all users - valid token
+GET https://localhost:5001/api/users
+Authorization: Bearer TechHiveSecureToken
+
+###
+
+### Get user by id
+GET https://localhost:5001/api/users/1
+Authorization: Bearer TechHiveSecureToken
+
+###
+
+### Create user
+POST https://localhost:5001/api/users/add
+Content-Type: application/json
+Authorization: Bearer TechHiveSecureToken
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@techhive.com",
+  "department": "HR"
+}
+
+###
+
+### Update user
+PUT https://localhost:5001/api/users/update/1
+Content-Type: application/json
+Authorization: Bearer TechHiveSecureToken
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith@techhive.com",
+  "department": "IT"
+}
+
+###
+
+### Delete user
+DELETE https://localhost:5001/api/users/delete/1
+Authorization: Bearer TechHiveSecureToken
+
+###
+
+### Missing token
+GET https://localhost:5001/api/users
+
+###
+
+### Invalid token
+GET https://localhost:5001/api/users
+Authorization: Bearer InvalidToken
+
+###
+
+### Trigger exception
+GET https://localhost:5001/api/users/error
+Authorization: Bearer TechHiveSecureToken
